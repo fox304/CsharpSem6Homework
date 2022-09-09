@@ -55,17 +55,18 @@ while (true)
     m = int.Parse(Console.ReadLine());
     Console.WriteLine("Введите n ");
     n = int.Parse(Console.ReadLine());
-    if (m==n) break;
+    if (m==n) break;                   //если матрица квадратная , то выход из цикла
     Console.WriteLine("Поскольку матрица не квадратная  , то заменить строки на столбцы невозможно ");
     Console.WriteLine("попробуйте ещё раз  ");
 
 }
+
 Console.WriteLine("Итак , у нас такая матрица  ");
 int [,] array = new int [m,n];
 Fill(array);
 Print(array);
 Console.WriteLine();
-Console.WriteLine("После упорядочивания элементов получилась вот такая   ");
+Console.WriteLine("После замены строк на столбцы  получилась вот такая   ");
 Change(array);
 Console.WriteLine();
 Print(array);
