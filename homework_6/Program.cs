@@ -37,22 +37,22 @@ void RangeArray(int [,] arr)
     int [] massive = new int [arr.GetLength(1)];
     for (int i = 0; i < arr.GetLength(0); i++)
     {
-        for (int j = 0; j < arr.GetLength(1); j++)
+        for (int j = 0; j < arr.GetLength(1); j++)//создаём одномерный массив из каждой строчки
         {
             massive[j] = arr[i,j];
             
         }
         
-        for (int j = 0; j < arr.GetLength(1); j++)
+        for (int j = 0; j < arr.GetLength(1); j++)//передача массива для упорядычевания в DecreasingArray и создание новой строки
         {
-            arr[i,j] = FindMaxIntoArray(massive)[j];
+            arr[i,j] = DecreasingArray(massive)[j];
         }
         
     }
 
 }
 
-int [] FindMaxIntoArray(int [] mas)
+int [] DecreasingArray(int [] mas)//упорядычеваем одномерный массив в порядке убывания
 {
     for (int i = 0; i < mas.Length; i++)
     {
@@ -77,12 +77,12 @@ Console.WriteLine("Допустим у нас массив 10 на 15 ,тогд�
 
 
 int [,] array = new int [10,15];
-Fill(array);
-Print(array);
+Fill(array);// заполняем массив
+Print(array);// распечатываем массив
 Console.WriteLine();
 Console.WriteLine("Сделаем массив , в котором элементы каждой строки упорядочены по убыванию  ");
-RangeArray(array);
+RangeArray(array); // упорядычеваем массив
 Console.WriteLine();
-Print(array);
+Print(array);// распечатываем массив после упорядычевания
 
 
